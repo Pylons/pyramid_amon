@@ -20,6 +20,7 @@ else:
 
 def exc_info(exc, tb):
     """Format exception information."""
+
     backtrace = []
     for part in traceback.format_tb(tb):
         backtrace.extend(part.rstrip().splitlines())
@@ -92,6 +93,7 @@ def amon_tween_factory(handler, registry):
                 }
             amonpy.exception(data)
             raise
+
     return amon_tween
 
 
