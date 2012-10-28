@@ -1,0 +1,15 @@
+# standard
+*~
+*.pyc
+*.pyo
+*.swo
+*.swp
+*.mo
+*.egg-info
+/.coverage
+/.tests
+/.Python
+/PYSMELLTAGS*
+
+# Mac
+.DS_Store
