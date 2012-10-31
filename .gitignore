@@ -11,6 +11,7 @@
 /.Python
 /.tox
 /PYSMELLTAGS*
+/sdist
 
 # project
 _build
