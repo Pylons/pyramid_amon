@@ -17,7 +17,7 @@ from sys import version
 
 from setuptools import setup, find_packages
 
-VERSION = '0.1'
+VERSION = '0.2dev'
 
 here = os.path.abspath(os.path.dirname(__file__))
 try:
@@ -60,7 +60,6 @@ setup(name='pyramid_amon',
         "Programming Language :: Python :: 2.6",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.2",
-        "Programming Language :: Python :: 3.3",
         ],
       keywords='wsgi pylons web pyramid',
       author="Blaise Laflamme",
