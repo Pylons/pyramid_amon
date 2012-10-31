@@ -1,6 +1,6 @@
 ##############################################################################
 #
-# Copyright (c) 2011 Agendaless Consulting and Contributors.
+# Copyright (c) 2012 Agendaless Consulting and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the BSD-like license at
@@ -64,8 +64,8 @@ setup(name='pyramid_amon',
         ],
       keywords='wsgi pylons web pyramid',
       author="Blaise Laflamme",
-      author_email="pylons-devel@googlegroups.com",
-      url="http://docs.pylonsproject.org",
+      author_email="pylons-discuss@googlegroups.com",
+      url="http://pylonsproject.org",
       license="BSD-derived (http://www.repoze.org/LICENSE.txt)",
       packages=find_packages(),
       include_package_data=True,
