@@ -27,6 +27,11 @@ import sys, os
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx', 'sphinx.ext.viewcode']
 
+# Looks for pyramid's objects
+intersphinx_mapping = {
+    'pyramid':    (
+        'http://docs.pylonsproject.org/projects/pyramid/en/latest', None)}
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -89,9 +94,31 @@ pygments_style = 'sphinx'
 
 # -- Options for HTML output ---------------------------------------------------
 
+# Add and use Pylons theme
+from subprocess import call, Popen, PIPE
+
+p = Popen('which git', shell=True, stdout=PIPE)
+git = p.stdout.read().strip()
+cwd = os.getcwd()
+_themes = os.path.join(cwd, '_themes')
+
+if not os.path.isdir(_themes):
+    call([git, 'clone', 'git://github.com/Pylons/pylons_sphinx_theme.git',
+            '_themes'])
+else:
+    os.chdir(_themes)
+    call([git, 'checkout', 'master'])
+    call([git, 'pull'])
+    os.chdir(cwd)
+
+sys.path.append(os.path.abspath('_themes'))
+html_theme_path = ['_themes']
+html_theme = 'pyramid'
+html_theme_options = dict(github_url='https://github.com/Pylons/pyramid_amon')
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+#html_theme = 'default'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
