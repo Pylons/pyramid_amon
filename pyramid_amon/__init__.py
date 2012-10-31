@@ -102,6 +102,9 @@ class IAmon(Interface):
 
 
 def get_amon(config_or_request):
+    """Obtain an amonpy instance previously registered via
+    ``config.include('pyramid_amon')``.
+    """
     return config_or_request.registry.getUtility(IAmon)
 
 
