@@ -9,6 +9,7 @@
 /.coverage
 /.tests
 /.Python
+/.tox
 /PYSMELLTAGS*
 
 # project
