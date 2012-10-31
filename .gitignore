@@ -11,5 +11,8 @@
 /.Python
 /PYSMELLTAGS*
 
+# project
+_build
+
 # Mac
 .DS_Store
