@@ -42,7 +42,7 @@ def exc_class(exc):
 
 def amon_tween_factory(handler, registry):
 
-    def amon_tween(request):
+    def amon_tween(request, amonpy=amonpy):
         try:
             return handler(request)
         except Exception as exc:
@@ -102,12 +102,7 @@ class IAmon(Interface):
 
 
 def get_amon(config_or_request):
-    if config_or_request.registry.queryUtility(IAmon):
-        return config_or_request.registry.getUtility(IAmon)
-    else:
-        raise Exception(
-            'You need to register amon to IAmon interface'
-        )
+    return config_or_request.registry.getUtility(IAmon)
 
 
 def includeme(config):  # pragma: no cover
